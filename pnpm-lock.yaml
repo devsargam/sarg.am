@@ -78,7 +78,7 @@ importers:
         version: 19.0.4(@types/react@19.0.10)
       autoprefixer:
         specifier: ^10.4.20
-        version: 10.4.20(postcss@8.4.47)
+        version: 10.4.20(postcss@8.5.3)
       eslint:
         specifier: ^8.57.1
         version: 8.57.1
@@ -86,8 +86,8 @@ importers:
         specifier: 15.2.1
         version: 15.2.1(eslint@8.57.1)(typescript@5.6.2)
       postcss:
-        specifier: ^8.4.47
-        version: 8.4.47
+        specifier: ^8.5.3
+        version: 8.5.3
       tailwindcss:
         specifier: ^3.4.13
         version: 3.4.13
@@ -1002,6 +1002,7 @@ packages:
   eslint@8.57.1:
     resolution: {integrity: sha512-ypowyDxpVSYpkXr9WPv2PAZCtNip1Mv5KTW0SCurXv/9iOpcrH9PaqUElksqEB6pChqHGDRCFTyrZlGhnLNGiA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
@@ -1467,8 +1468,8 @@ packages:
   mz@2.7.0:
     resolution: {integrity: sha512-z81GNO7nnYMEhrGh9LeymoE4+Yr0Wn5McHIZMK5cfQCl+NDX08sCZgUc9/6MHni9IWuFLm1Z3HTCXu2z9fN62Q==}
 
-  nanoid@3.3.7:
-    resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
+  nanoid@3.3.11:
+    resolution: {integrity: sha512-N8SpfPUnUp1bK+PMYW8qSWdl9U+wwNWI4QKxOYDy9JAro3WMX7p2OeVRF9v+347pnakNevPmiHhNmZ2HbFA76w==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
 
@@ -1602,6 +1603,9 @@ packages:
   picocolors@1.1.0:
     resolution: {integrity: sha512-TQ92mBOW0l3LeMeyLV6mzy/kWr8lkd/hp3mTg7wYK7zJhuBStmGMBG0BdeDZS/dZx1IukaX6Bk11zcln25o1Aw==}
 
+  picocolors@1.1.1:
+    resolution: {integrity: sha512-xceH2snhtb5M9liqDsmEw56le376mTZkEX/jEb/RxNFyegNul7eNslCXP9FDj/Lcu0X8KEyMceP2ntpaHrDEVA==}
+
   picomatch@2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
@@ -1663,8 +1667,8 @@ packages:
     resolution: {integrity: sha512-PS08Iboia9mts/2ygV3eLpY5ghnUcfLV/EXTOW1E2qYxJKGGBUtNjN76FYHnMs36RmARn41bC0AZmn+rR0OVpQ==}
     engines: {node: ^10 || ^12 || >=14}
 
-  postcss@8.4.47:
-    resolution: {integrity: sha512-56rxCq7G/XfB4EkXq9Egn5GCqugWvDFjafDOThIdMBsI15iqPqR5r15TfSr1YPYeEI19YeaXMCbY6u88Y76GLQ==}
+  postcss@8.5.3:
+    resolution: {integrity: sha512-dle9A3yYxlBSrt8Fu+IpjGT8SY8hN0mlaA6GY8t0P5PjIOZemULz/E2Bnm/2dcUOena75OTNkHI76uZBNUUq3A==}
     engines: {node: ^10 || ^12 || >=14}
 
   prelude-ls@1.2.1:
@@ -2623,14 +2627,14 @@ snapshots:
 
   ast-types-flow@0.0.8: {}
 
-  autoprefixer@10.4.20(postcss@8.4.47):
+  autoprefixer@10.4.20(postcss@8.5.3):
     dependencies:
       browserslist: 4.24.0
       caniuse-lite: 1.0.30001713
       fraction.js: 4.3.7
       normalize-range: 0.1.2
       picocolors: 1.1.0
-      postcss: 8.4.47
+      postcss: 8.5.3
       postcss-value-parser: 4.2.0
 
   available-typed-arrays@1.0.7:
@@ -3579,7 +3583,7 @@ snapshots:
       object-assign: 4.1.1
       thenify-all: 1.6.0
 
-  nanoid@3.3.7: {}
+  nanoid@3.3.11: {}
 
   natural-compare@1.4.0: {}
 
@@ -3709,6 +3713,8 @@ snapshots:
 
   picocolors@1.1.0: {}
 
+  picocolors@1.1.1: {}
+
   picomatch@2.3.1: {}
 
   pify@2.3.0: {}
@@ -3717,28 +3723,28 @@ snapshots:
 
   possible-typed-array-names@1.0.0: {}
 
-  postcss-import@15.1.0(postcss@8.4.47):
+  postcss-import@15.1.0(postcss@8.5.3):
     dependencies:
-      postcss: 8.4.47
+      postcss: 8.5.3
       postcss-value-parser: 4.2.0
       read-cache: 1.0.0
       resolve: 1.22.8
 
-  postcss-js@4.0.1(postcss@8.4.47):
+  postcss-js@4.0.1(postcss@8.5.3):
     dependencies:
       camelcase-css: 2.0.1
-      postcss: 8.4.47
+      postcss: 8.5.3
 
-  postcss-load-config@4.0.2(postcss@8.4.47):
+  postcss-load-config@4.0.2(postcss@8.5.3):
     dependencies:
       lilconfig: 3.1.2
       yaml: 2.5.1
     optionalDependencies:
-      postcss: 8.4.47
+      postcss: 8.5.3
 
-  postcss-nested@6.2.0(postcss@8.4.47):
+  postcss-nested@6.2.0(postcss@8.5.3):
     dependencies:
-      postcss: 8.4.47
+      postcss: 8.5.3
       postcss-selector-parser: 6.1.2
 
   postcss-selector-parser@6.0.10:
@@ -3755,14 +3761,14 @@ snapshots:
 
   postcss@8.4.31:
     dependencies:
-      nanoid: 3.3.7
-      picocolors: 1.1.0
+      nanoid: 3.3.11
+      picocolors: 1.1.1
       source-map-js: 1.2.1
 
-  postcss@8.4.47:
+  postcss@8.5.3:
     dependencies:
-      nanoid: 3.3.7
-      picocolors: 1.1.0
+      nanoid: 3.3.11
+      picocolors: 1.1.1
       source-map-js: 1.2.1
 
   prelude-ls@1.2.1: {}
@@ -4115,11 +4121,11 @@ snapshots:
       normalize-path: 3.0.0
       object-hash: 3.0.0
       picocolors: 1.1.0
-      postcss: 8.4.47
-      postcss-import: 15.1.0(postcss@8.4.47)
-      postcss-js: 4.0.1(postcss@8.4.47)
-      postcss-load-config: 4.0.2(postcss@8.4.47)
-      postcss-nested: 6.2.0(postcss@8.4.47)
+      postcss: 8.5.3
+      postcss-import: 15.1.0(postcss@8.5.3)
+      postcss-js: 4.0.1(postcss@8.5.3)
+      postcss-load-config: 4.0.2(postcss@8.5.3)
+      postcss-nested: 6.2.0(postcss@8.5.3)
       postcss-selector-parser: 6.1.2
       resolve: 1.22.8
       sucrase: 3.35.0
@@ -4217,7 +4223,7 @@ snapshots:
     dependencies:
       browserslist: 4.24.0
       escalade: 3.2.0
-      picocolors: 1.1.0
+      picocolors: 1.1.1
 
   uri-js@4.4.1:
     dependencies:
