@@ -28,8 +28,8 @@ importers:
         specifier: ^0.365.0
         version: 0.365.0(react@19.1.0)
       markdown-to-jsx:
-        specifier: ^7.7.3
-        version: 7.7.3(react@19.1.0)
+        specifier: ^7.7.6
+        version: 7.7.6(react@19.1.0)
       mini-svg-data-uri:
         specifier: ^1.4.4
         version: 1.4.4
@@ -1002,6 +1002,7 @@ packages:
   eslint@8.57.1:
     resolution: {integrity: sha512-ypowyDxpVSYpkXr9WPv2PAZCtNip1Mv5KTW0SCurXv/9iOpcrH9PaqUElksqEB6pChqHGDRCFTyrZlGhnLNGiA==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
@@ -1422,8 +1423,8 @@ packages:
     peerDependencies:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
 
-  markdown-to-jsx@7.7.3:
-    resolution: {integrity: sha512-o35IhJDFP6Fv60zPy+hbvZSQMmgvSGdK5j8NRZ7FeZMY+Bgqw+dSg7SC1ZEzC26++CiOUCqkbq96/c3j/FfTEQ==}
+  markdown-to-jsx@7.7.6:
+    resolution: {integrity: sha512-/PWFFoKKMidk4Ut06F5hs5sluq1aJ0CGvUJWsnCK6hx/LPM8vlhvKAxtGHJ+U+V2Il2wmnfO6r81ICD3xZRVaw==}
     engines: {node: '>= 10'}
     peerDependencies:
       react: '>= 0.14.0'
@@ -3540,7 +3541,7 @@ snapshots:
     dependencies:
       react: 19.1.0
 
-  markdown-to-jsx@7.7.3(react@19.1.0):
+  markdown-to-jsx@7.7.6(react@19.1.0):
     dependencies:
       react: 19.1.0
 
