@@ -41,3 +41,10 @@
 html {
   scroll-behavior: smooth;
 }
+
+.highlight {
+  outline: 2px dotted white;
+  outline-offset: 4px;
+  border-radius: 4px;
+  transition: outline 0.3s ease-in-out, outline-offset 0.3s ease-in-out;
+}
