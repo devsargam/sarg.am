@@ -3,7 +3,6 @@ import GetInTouch from '@/components/get-in-touch';
 import Introduction from '@/components/introduction';
 import ProofOfWork from '@/components/proof-of-work';
 import WorkExperience from '@/components/work-experience';
-import FiberWrapper from '@/components/fiber-wrapper';
 
 export default function Home() {
   return (
@@ -19,7 +18,7 @@ export default function Home() {
       {/* Footer Section */}
       <hr className="border-zinc-900 dark:border-zinc-800 border w-full" />
       <GetInTouch />
-      <FiberWrapper />
+      {/* <FiberWrapper /> */}
     </main>
   );
 }
