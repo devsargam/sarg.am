@@ -1,12 +1,14 @@
 import Image from 'next/image';
 import React from 'react';
+import { SvgLogo } from './logo';
 
 function Introduction() {
   return (
     <div className="flex justify-between items-center w-full">
       <div>
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-2 text-black dark:text-white">
-          Sargam Poudel
+          {/* Sargam Poudel */}
+          <SvgLogo />
         </h1>
         <p className="text-zinc-600 dark:text-zinc-500">
           I tinker around with my beloved laptop
