@@ -15,7 +15,7 @@
     "bippy": "^0.3.17",
     "gray-matter": "^4.0.3",
     "lucide-react": "^0.365.0",
-    "markdown-to-jsx": "^7.7.3",
+    "markdown-to-jsx": "^7.7.12",
     "mini-svg-data-uri": "^1.4.4",
     "next": "15.3.0",
     "next-view-transitions": "^0.3.4",
