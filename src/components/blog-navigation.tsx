@@ -22,7 +22,7 @@ export function BlogNavigation() {
         <Link
           key={link.href}
           href={link.href}
-          className={`pb-2 -mb-[1px] flex items-center gap-2 ${
+          className={`pb-2 -mb-px flex items-center gap-2 ${
             pathname === link.href
               ? 'border-b-2 border-gray-900 dark:border-gray-100 text-gray-900 dark:text-gray-100'
               : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100'
