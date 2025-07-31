@@ -10,6 +10,11 @@ interface ILink {
 
 export const links: Array<ILink> = [
   {
+    name: 'Improved Mail0 loading speed by introducing indexes',
+    href: 'https://github.com/Mail-0/Zero/pull/1613',
+    icon: 'pull-request',
+  },
+  {
     name: 'Mannu Aurora & Harkirat appreciating me for my work',
     href: '',
     hidden: true,
