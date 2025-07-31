@@ -10,12 +10,6 @@ interface ILink {
 
 export const links: Array<ILink> = [
   {
-    name: 'Podcast with Harkirat Singh after getting into us based tech startup',
-    href: 'https://youtu.be/gp6yoq2a0lY',
-    icon: 'video',
-    iconClass: 'text-black dark:text-white',
-  },
-  {
     name: 'Mannu Aurora & Harkirat appreciating me for my work',
     href: '',
     hidden: true,
