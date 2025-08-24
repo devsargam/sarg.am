@@ -1,6 +1,6 @@
 ---
 title: Harsh truth about life
-date: '2025-07-24'
+date: '2025-08-24'
 ---
 
 The honest truth I've realized about life after living for almost 20 years.
