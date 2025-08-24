@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 
 const title = 'Blog Posts';
 const description =
-  'Explore my thoughts, opinions, and insights on software development, lifestyle and midlife crisis.';
+  'Explore my thoughts, opinions, and insights on software development, lifestyle and early life crisis.';
 
 export const metadata: Metadata = {
   title,
