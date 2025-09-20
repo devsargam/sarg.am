@@ -36,6 +36,7 @@ export default function RootLayout({
             })(window, document, "clarity", "script", "nczs4rjeot");
             `}
           </Script>
+          <Script id='ahrefs' src="https://analytics.ahrefs.com/analytics.js" data-key="KrVNPks4a/m70wrtIgrG/g" async></Script>
         </body>
       </html>
     </ViewTransitions>
