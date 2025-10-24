@@ -17,11 +17,11 @@
     "lucide-react": "^0.365.0",
     "markdown-to-jsx": "^7.7.12",
     "mini-svg-data-uri": "^1.4.4",
-    "next": "15.4.2",
+    "next": "16.0.0",
     "next-view-transitions": "^0.3.4",
-    "react": "19.1.0",
+    "react": "19.2.0",
     "react-calendar-heatmap": "^1.10.0",
-    "react-dom": "19.1.0",
+    "react-dom": "19.2.0",
     "react-github-calendar": "^4.5.9",
     "react-icons": "^5.5.0",
     "react-intersection-observer": "^9.16.0",
@@ -31,19 +31,19 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.11",
-    "@types/node": "^20.19.9",
-    "@types/react": "19.1.8",
-    "@types/react-dom": "19.1.6",
+    "@types/node": "^22",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
     "eslint": "^8.57.1",
-    "eslint-config-next": "15.4.2",
+    "eslint-config-next": "16.0.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.11",
     "typescript": "^5.8.3"
   },
   "pnpm": {
     "overrides": {
-      "@types/react": "19.1.8",
-      "@types/react-dom": "19.1.6"
+      "@types/react": "19.2.2",
+      "@types/react-dom": "19.2.2"
     }
   },
   "packageManager": "pnpm@10.7.0+sha512.6b865ad4b62a1d9842b61d674a393903b871d9244954f652b8842c2b553c72176b278f64c463e52d40fff8aba385c235c8c9ecf5cc7de4fd78b8bb6d49633ab6"
