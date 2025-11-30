@@ -91,7 +91,7 @@ export default async function BlogPost(props: PageProps) {
   const date = beautifyDate(post.date);
 
   return (
-    <main className="container mx-auto px-4 py-8 max-w-4xl">
+    <main className="container mx-auto sm:px-4 py-8 max-w-4xl">
       <BlogNavigation />
       <div className="max-w-3xl mx-auto">
         <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-2 text-black dark:text-white">
