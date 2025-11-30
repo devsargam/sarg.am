@@ -8,7 +8,7 @@ interface MarkdownRendererProps {
 
 export function MarkdownRenderer({ content }: MarkdownRendererProps) {
   return (
-    <article className="prose prose-slate max-w-none dark:prose-invert text-gray-600 dark:text-gray-300 hyphens-auto">
+    <article className="prose prose-xl prose-slate dark:prose-invert mx-auto text-gray-700 dark:text-gray-200 prose-p:text-lg prose-p:leading-loose prose-p:my-8 prose-p:text-justify">
       <Markdown>{content}</Markdown>
     </article>
   );

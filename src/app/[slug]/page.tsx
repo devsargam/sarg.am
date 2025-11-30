@@ -91,12 +91,14 @@ export default async function BlogPost(props: PageProps) {
   const date = beautifyDate(post.date);
 
   return (
-    <main className="container mx-auto px-4 py-8">
+    <main className="container mx-auto px-4 py-8 max-w-4xl">
       <BlogNavigation />
-      <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-2 text-black dark:text-white">
-        {title}
-      </h1>
-      <p className="text-gray-500 dark:text-gray-400 mb-4">{date}</p>
+      <div className="max-w-3xl mx-auto">
+        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-2 text-black dark:text-white">
+          {title}
+        </h1>
+        <p className="text-gray-500 dark:text-gray-400 mb-8">{date}</p>
+      </div>
       <Suspense fallback={<div>Loading...</div>}>
         <MarkdownRenderer content={post.content} />
       </Suspense>
