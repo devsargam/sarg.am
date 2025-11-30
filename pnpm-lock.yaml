@@ -31,8 +31,8 @@ importers:
         specifier: ^0.365.0
         version: 0.365.0(react@19.2.0)
       markdown-to-jsx:
-        specifier: ^7.7.12
-        version: 7.7.12(react@19.2.0)
+        specifier: ^8.0.0
+        version: 8.0.0(react@19.2.0)
       mini-svg-data-uri:
         specifier: ^1.4.4
         version: 1.4.4
@@ -1737,11 +1737,14 @@ packages:
   magic-string@0.30.17:
     resolution: {integrity: sha512-sNPKHvyjVf7gyjwS4xGTaW/mCnF8wnjtifKBEhxfZ7E/S8tQ0rssrwGNn6q8JH/ohItJfSQp9mBtQYuTlH5QnA==}
 
-  markdown-to-jsx@7.7.12:
-    resolution: {integrity: sha512-Y5xNBqoaTooSLkmlg2P0fdbh53gp4MqW7zhvcweGCPUWvWI5BecWRYI8vPlzT8D7OULxsQg2qoRW9EsJlBWasQ==}
+  markdown-to-jsx@8.0.0:
+    resolution: {integrity: sha512-hWEaRxeCDjes1CVUQqU+Ov0mCqBqkGhLKjL98KdbwHSgEWZZSJQeGlJQatVfeZ3RaxrfTrZZ3eczl2dhp5c/pA==}
     engines: {node: '>= 10'}
     peerDependencies:
       react: '>= 0.14.0'
+    peerDependenciesMeta:
+      react:
+        optional: true
 
   math-intrinsics@1.1.0:
     resolution: {integrity: sha512-/IXtbwEk5HTPyEwyKX6hGkYXxM9nbj64B+ilVJnC/R6B0pH5G4V3b0pVbL7DBj4tkhBAppbQUlf6F6Xl9LHu1g==}
@@ -4024,8 +4027,8 @@ snapshots:
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.4
 
-  markdown-to-jsx@7.7.12(react@19.2.0):
-    dependencies:
+  markdown-to-jsx@8.0.0(react@19.2.0):
+    optionalDependencies:
       react: 19.2.0
 
   math-intrinsics@1.1.0: {}
