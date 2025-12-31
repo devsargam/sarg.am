@@ -34,6 +34,7 @@
     "@types/node": "^22",
     "@types/react": "19.2.2",
     "@types/react-dom": "19.2.2",
+    "baseline-browser-mapping": "^2.9.11",
     "eslint": "^8.57.1",
     "eslint-config-next": "16.0.0",
     "postcss": "^8.5.6",
