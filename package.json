@@ -19,7 +19,7 @@
     "mini-svg-data-uri": "^1.4.4",
     "next": "16.0.7",
     "next-view-transitions": "^0.3.4",
-    "react": "19.2.0",
+    "react": "19.2.3",
     "react-calendar-heatmap": "^1.10.0",
     "react-dom": "19.2.0",
     "react-github-calendar": "^4.5.9",
@@ -32,7 +32,7 @@
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.11",
     "@types/node": "^22",
-    "@types/react": "19.2.2",
+    "@types/react": "19.2.7",
     "@types/react-dom": "19.2.2",
     "baseline-browser-mapping": "^2.9.11",
     "eslint": "^8.57.1",
@@ -43,7 +43,7 @@
   },
   "pnpm": {
     "overrides": {
-      "@types/react": "19.2.2",
+      "@types/react": "19.2.7",
       "@types/react-dom": "19.2.2"
     }
   },
