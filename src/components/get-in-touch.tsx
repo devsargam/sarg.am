@@ -33,7 +33,7 @@ const socialLinks: SocialLink[] = [
 
 function GetInTouch() {
   return (
-    <footer className="pt-8 border-t border-[var(--foreground)]/5">
+    <footer className="pt-6 md:pt-8 border-t border-[var(--foreground)]/5">
       <div className="flex justify-center gap-5">
         {socialLinks.map((link, index) => (
           <Link
@@ -46,7 +46,7 @@ function GetInTouch() {
           </Link>
         ))}
       </div>
-      <p className="mt-6 text-center text-xs text-[var(--foreground)]/30">
+      <p className="mt-4 md:mt-6 text-center text-xs text-[var(--foreground)]/30">
         © {new Date().getFullYear()} Sargam Poudel
       </p>
     </footer>

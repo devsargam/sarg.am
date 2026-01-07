@@ -17,7 +17,7 @@ export function BlogNavigation() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex items-center gap-6 mb-8 border-b border-[var(--foreground)]/10">
+    <nav className="flex items-center gap-6 mb-6 md:mb-8 border-b border-[var(--foreground)]/10">
       {blogLinks.map((link) => (
         <Link
           key={link.href}

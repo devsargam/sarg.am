@@ -101,7 +101,7 @@ export default async function BlogPost(props: PageProps) {
   return (
     <main className="mx-auto max-w-xl">
       <BlogNavigation />
-      <header className="mb-12">
+      <header className="mb-8 md:mb-12">
         <h1 
           className="font-bold text-3xl md:text-4xl tracking-tight mb-3 text-[var(--foreground)]"
           style={{ viewTransitionName: `post-${params.slug}` }}
@@ -115,7 +115,7 @@ export default async function BlogPost(props: PageProps) {
       </Suspense>
 
       {/* Previous / Next navigation */}
-      <nav className="mt-16 pt-8 border-t border-[var(--foreground)]/10 flex justify-between gap-4">
+      <nav className="mt-12 md:mt-16 pt-6 md:pt-8 border-t border-[var(--foreground)]/10 flex justify-between gap-4">
         {prevPost ? (
           <Link
             href={`/${prevPost.slug}`}
