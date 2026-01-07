@@ -25,7 +25,7 @@ export default function RootLayout({
           <a href="#main-content" className="skip-to-content">
             Skip to content
           </a>
-          <main id="main-content" className="bg-[var(--background)] border border-[var(--foreground)]/10 min-h-screen max-w-2xl mx-auto my-1 px-4 py-6">
+          <main id="main-content" className="bg-[var(--background)] min-h-screen max-w-xl mx-auto px-6 py-12 md:py-16">
             {children}
             <SpeedInsights />
             <Analytics />

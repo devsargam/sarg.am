@@ -67,7 +67,7 @@ export const experiences: WorkExperience[] = [
   {
     startDate: 'October 2024',
     endDate: 'Present',
-    company: 'Dropstation Inc.',
+    company: 'Spotsnow',
     position: 'Software Engineer',
   },
   {
