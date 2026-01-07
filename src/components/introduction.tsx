@@ -5,10 +5,10 @@ function Introduction() {
   return (
     <div className="flex justify-between items-center w-full">
       <div>
-        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-2 text-black dark:text-white">
+        <h1 className="font-bold text-3xl md:text-5xl tracking-tight mb-2 text-[var(--foreground)]">
           Sargam Poudel
         </h1>
-        <p className="text-zinc-600 dark:text-zinc-500">
+        <p className="text-[var(--foreground)]/60">
           I tinker around with my beloved laptop
         </p>
       </div>
@@ -18,7 +18,7 @@ function Introduction() {
           alt="Sargam's Photo"
           height={200}
           width={200}
-          className="object-cover rounded-full border-4 dark:border-zinc-800 border-zinc-900"
+          className="object-cover rounded-full border-4 border-[var(--foreground)]/20 sepia-[0.2] saturate-[0.9] contrast-[0.95] brightness-[1.02]"
         />
       </div>
     </div>

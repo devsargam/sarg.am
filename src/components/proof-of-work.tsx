@@ -7,11 +7,11 @@ import GithubCalendar from './github-calendar';
 
 function ProofOfWork() {
   return (
-    <div className="flex flex-col gap-y-4 text-black dark:text-white w-full">
+    <div className="flex flex-col gap-y-4 text-[var(--foreground)] w-full">
       <h2 className="font-bold text-2xl md:text-4xl tracking-tight">
         Proof of Work
       </h2>
-      <p className="text-gray-600 dark:text-gray-400 mb-4">
+      <p className="text-[var(--foreground)]/60 mb-4">
         All the work I have done so far in public && people&apos;s appreciation
       </p>
       <GithubCalendar />
@@ -48,7 +48,7 @@ function ProofOfWorkList() {
               href={el?.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 dark:hover:bg-zinc-800/50 rounded-md py-3 w-full mb-3 hover:bg-gray-50 flex flex-row items-center space-x-2 px-3 transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-400"
+              className="border border-[var(--foreground)]/10 hover:border-[var(--foreground)]/20 hover:bg-[var(--foreground)]/5 rounded-md py-3 w-full mb-3 flex flex-row items-center space-x-2 px-3 transition-all duration-150"
             >
               {icon}
               {/* <el.icon className={clsx('h-5 w-5', el?.iconClass)} /> */}

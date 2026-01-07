@@ -2,7 +2,7 @@ import React from 'react';
 
 function GetInTouch() {
   return (
-    <div className="flex flex-col gap-y-4 text-black dark:text-white w-full">
+    <div className="flex flex-col gap-y-4 text-[var(--foreground)] w-full">
       {/* <h2 className="font-bold text-2xl md:text-4xl tracking-tight">
         Get In Touch
       </h2>
@@ -54,14 +54,14 @@ function Footer() {
           <Link
             key={index}
             href={link.href}
-            className="text-gray-400 dark:hover:text-white hover:text-zinc-900 transition-all duration-150 hover:scale-110"
+            className="text-[var(--foreground)]/50 hover:text-[var(--foreground)] transition-all duration-150 hover:scale-110"
             aria-label={link.label}
           >
             {link.icon}
           </Link>
         ))}
       </div>
-      <div className="mt-4 text-center text-sm text-gray-500">
+      <div className="mt-4 text-center text-sm text-[var(--foreground)]/50">
         © {new Date().getFullYear()} Sargam Poudel. All rights reserved.
       </div>
       <div className="mt-4 text-center text-sm">

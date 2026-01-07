@@ -17,15 +17,15 @@ export function BlogNavigation() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex items-center gap-6 mb-8 border-b border-gray-200 dark:border-gray-800">
+    <nav className="flex items-center gap-6 mb-8 border-b border-[var(--foreground)]/10">
       {blogLinks.map((link) => (
         <Link
           key={link.href}
           href={link.href}
-          className={`pb-2 -mb-px flex items-center gap-2 ${
+          className={`pb-2 -mb-px flex items-center gap-2 transition-colors ${
             pathname === link.href
-              ? 'border-b-2 border-gray-900 dark:border-gray-100 text-gray-900 dark:text-gray-100'
-              : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-100'
+              ? 'border-b-2 border-[var(--foreground)] text-[var(--foreground)]'
+              : 'text-[var(--foreground)]/60 hover:text-[var(--foreground)]'
           }`}
         >
           {link.icon}
