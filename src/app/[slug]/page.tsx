@@ -7,6 +7,9 @@ import path from 'path';
 import { notFound } from 'next/navigation';
 import { z } from 'zod';
 import { beautifyDate } from '@/utils/beautify-date';
+import { getAllBlogPosts } from '@/utils/get-blog-posts';
+import { Link } from 'next-view-transitions';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 
 interface PageProps {
   params: Promise<{
@@ -90,8 +93,13 @@ export default async function BlogPost(props: PageProps) {
   const title = post.title;
   const date = beautifyDate(post.date);
 
+  const allPosts = getAllBlogPosts();
+  const currentIndex = allPosts.findIndex((p) => p.slug === params.slug);
+  const prevPost = currentIndex < allPosts.length - 1 ? allPosts[currentIndex + 1] : null;
+  const nextPost = currentIndex > 0 ? allPosts[currentIndex - 1] : null;
+
   return (
-    <main className="mx-auto py-8 max-w-3xl">
+    <main className="mx-auto max-w-xl">
       <BlogNavigation />
       <header className="mb-12">
         <h1 
@@ -105,6 +113,32 @@ export default async function BlogPost(props: PageProps) {
       <Suspense fallback={<div>Loading...</div>}>
         <MarkdownRenderer content={post.content} />
       </Suspense>
+
+      {/* Previous / Next navigation */}
+      <nav className="mt-16 pt-8 border-t border-[var(--foreground)]/10 flex justify-between gap-4">
+        {prevPost ? (
+          <Link
+            href={`/${prevPost.slug}`}
+            className="flex items-center gap-2 text-sm text-[var(--foreground)]/60 hover:text-[var(--foreground)] transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span className="truncate">{prevPost.title}</span>
+          </Link>
+        ) : (
+          <div />
+        )}
+        {nextPost ? (
+          <Link
+            href={`/${nextPost.slug}`}
+            className="flex items-center gap-2 text-sm text-[var(--foreground)]/60 hover:text-[var(--foreground)] transition-colors text-right"
+          >
+            <span className="truncate">{nextPost.title}</span>
+            <ArrowRight className="w-4 h-4" />
+          </Link>
+        ) : (
+          <div />
+        )}
+      </nav>
     </main>
   );
 }

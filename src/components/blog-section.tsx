@@ -1,30 +1,8 @@
 import { getAllBlogPosts } from '@/utils/get-blog-posts';
-import type { BlogPost } from '@/utils/get-blog-posts';
-import { Link } from 'next-view-transitions';
-import { beautifyDate } from '@/utils/beautify-date';
+import { BlogList } from '@/components/blog-list';
 
 // Get blog posts at build time
 const blogPosts = getAllBlogPosts();
-
-// Blog card component
-function BlogCard({ post }: { post: BlogPost }) {
-  return (
-    <Link
-      href={`/${post.slug}`}
-      className="group py-3 flex justify-between items-baseline gap-4 border-b border-[var(--foreground)]/5 last:border-0 transition-colors"
-    >
-      <span 
-        className="font-medium group-hover:text-[var(--foreground)]/70 transition-colors"
-        style={{ viewTransitionName: `post-${post.slug}` }}
-      >
-        {post.title}
-      </span>
-      <span className="text-xs text-[var(--foreground)]/40 shrink-0">
-        {beautifyDate(post.date)}
-      </span>
-    </Link>
-  );
-}
 
 function BlogSection() {
   return (
@@ -34,11 +12,7 @@ function BlogSection() {
       </h2>
 
       {blogPosts.length > 0 ? (
-        <div className="flex flex-col">
-          {blogPosts.map((post) => (
-            <BlogCard key={post.slug} post={post} />
-          ))}
-        </div>
+        <BlogList posts={blogPosts} />
       ) : (
         <p className="text-[var(--foreground)]/50 text-sm">
           No posts yet...
