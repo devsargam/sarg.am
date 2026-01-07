@@ -8,7 +8,7 @@ const GitHubCalendar = dynamic(() => import('react-github-calendar'), {
   loading: () => <div className="h-[159px] w-full" />,
 });
 
-function GithubCalender() {
+function GithubCalendar() {
   const [totalCount, setTotalCount] = useState(0);
 
   const processContributions = useCallback((contributions: Activity[]) => {
@@ -33,4 +33,4 @@ function GithubCalender() {
   );
 }
 
-export default GithubCalender;
+export default GithubCalendar;

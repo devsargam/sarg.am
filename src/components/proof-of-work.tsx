@@ -3,7 +3,7 @@ import React from 'react';
 import PullRequestIcon from './icons/pull-request-icon';
 import GithubLogoIcon from './icons/github-logo-icon';
 import CoffeeIcon from './icons/coffee-icon';
-import GithubCalender from './github-calender';
+import GithubCalendar from './github-calendar';
 
 function ProofOfWork() {
   return (
@@ -14,7 +14,7 @@ function ProofOfWork() {
       <p className="text-gray-600 dark:text-gray-400 mb-4">
         All the work I have done so far in public && people&apos;s appreciation
       </p>
-      <GithubCalender />
+      <GithubCalendar />
       {/* TODO: Add a nice table or such design */}
       <ProofOfWorkList />
     </div>
@@ -46,8 +46,9 @@ function ProofOfWorkList() {
             <a
               key={el?.href}
               href={el?.href}
-              target="__blank"
-              className="dark:hover:bg-zinc-800 dark:border-zinc-800 border-2 border-zinc-800 rounded-md py-2 w-full mb-4 hover:bg-gray-50 flex flex-row items-center space-x-2 px-2"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-700 dark:hover:bg-zinc-800/50 rounded-md py-3 w-full mb-3 hover:bg-gray-50 flex flex-row items-center space-x-2 px-3 transition-all duration-150 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-zinc-400"
             >
               {icon}
               {/* <el.icon className={clsx('h-5 w-5', el?.iconClass)} /> */}

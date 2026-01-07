@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { z } from 'zod';
+import { blogSchema } from '@/schema/blog';
 
 export interface BlogPost {
   slug: string;
@@ -9,14 +9,17 @@ export interface BlogPost {
   description?: string;
   date: string;
   tags?: string[];
+  readingTime: number;
 }
 
-export const blogSchema = z.object({
-  title: z.string(),
-  date: z.string(),
-  tags: z.array(z.string()).optional(),
-  description: z.string().optional(),
-});
+/**
+ * Calculate reading time in minutes
+ */
+function calculateReadingTime(content: string): number {
+  const wordsPerMinute = 200;
+  const words = content.trim().split(/\s+/).length;
+  return Math.max(1, Math.ceil(words / wordsPerMinute));
+}
 
 /**
  * Get all blog posts from content directory
@@ -31,7 +34,7 @@ export function getAllBlogPosts(): BlogPost[] {
       .map((file) => {
         const filePath = path.join(contentDir, file);
         const fileContent = fs.readFileSync(filePath, 'utf8');
-        const { data } = matter(fileContent);
+        const { data, content } = matter(fileContent);
 
         const { success, data: validatedData } = blogSchema.safeParse(data);
 
@@ -46,6 +49,7 @@ export function getAllBlogPosts(): BlogPost[] {
           // Set a default description if none exists
           description:
             validatedData.description || 'Read more about this topic...',
+          readingTime: calculateReadingTime(content),
         };
       })
       .filter(Boolean) as BlogPost[];

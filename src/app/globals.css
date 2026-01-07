@@ -96,3 +96,27 @@ html {
   border-radius: 4px;
   transition: outline 0.3s ease-in-out, outline-offset 0.3s ease-in-out;
 }
+
+/* Focus states for accessibility */
+*:focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Skip to content link */
+.skip-to-content {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 0.5rem 1rem;
+  background: var(--foreground);
+  color: var(--background);
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.skip-to-content:focus {
+  left: 1rem;
+  top: 1rem;
+}

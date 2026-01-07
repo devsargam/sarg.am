@@ -6,7 +6,7 @@ import WorkExperience from '@/components/work-experience';
 
 export default function Home() {
   return (
-    <main className="flex flex-col gap-y-8 justify-center items-start mx-auto">
+    <main className="flex flex-col gap-y-12 md:gap-y-16 justify-center items-start mx-auto">
       {/* Introduction Section */}
       <Introduction />
       {/* Proof of work Section */}
@@ -16,9 +16,8 @@ export default function Home() {
       {/* Blogs Section */}
       <BlogSection />
       {/* Footer Section */}
-      <hr className="border-zinc-900 dark:border-zinc-800 border w-full" />
+      {/*<div className="w-16 h-px bg-zinc-200 dark:bg-zinc-800 mx-auto my-4" />*/}
       <GetInTouch />
-      {/* <FiberWrapper /> */}
     </main>
   );
 }

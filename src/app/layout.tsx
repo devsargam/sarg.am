@@ -22,7 +22,10 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang="en" className="bg-[var(--background)] text-[var(--foreground)]">
         <body className={inter.className}>
-          <main className="bg-[var(--background)] dark:border-zinc-800 border-zinc-200 border-2 min-h-screen max-w-2xl mx-auto my-1 px-4 py-4">
+          <a href="#main-content" className="skip-to-content">
+            Skip to content
+          </a>
+          <main id="main-content" className="bg-[var(--background)] border border-zinc-100 dark:border-zinc-800/50 min-h-screen max-w-2xl mx-auto my-1 px-4 py-6">
             {children}
             <SpeedInsights />
             <Analytics />

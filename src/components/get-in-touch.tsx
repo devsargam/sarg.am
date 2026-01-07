@@ -54,7 +54,7 @@ function Footer() {
           <Link
             key={index}
             href={link.href}
-            className="text-gray-400 dark:hover:text-white hover:text-zinc-900 transition-colors duration-200"
+            className="text-gray-400 dark:hover:text-white hover:text-zinc-900 transition-all duration-150 hover:scale-110"
             aria-label={link.label}
           >
             {link.icon}
