@@ -1,5 +1,17 @@
 @import 'tailwindcss';
 
+:root {
+  --background: #FFFCF0;
+  --foreground: #100F0F;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #100F0F;
+    --foreground: #CECDC3;
+  }
+}
+
 @theme {
   --animate-*: initial;
   --animate-shimmer: shimmer 2s linear infinite;

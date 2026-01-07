@@ -20,9 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <ViewTransitions>
-      <html lang="en" className="bg-white dark:bg-zinc-900">
+      <html lang="en" className="bg-[var(--background)] text-[var(--foreground)]">
         <body className={inter.className}>
-          <main className="bg-white dark:border-zinc-800 border-zinc-200 border-2 dark:bg-zinc-900 min-h-screen max-w-2xl mx-auto my-1 px-4 py-4">
+          <main className="bg-[var(--background)] dark:border-zinc-800 border-zinc-200 border-2 min-h-screen max-w-2xl mx-auto my-1 px-4 py-4">
             {children}
             <SpeedInsights />
             <Analytics />
