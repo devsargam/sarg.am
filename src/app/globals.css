@@ -90,6 +90,12 @@ html {
   scroll-behavior: smooth;
 }
 
+/* View Transitions - subtle crossfade */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 100ms;
+}
+
 .highlight {
   outline: 2px dotted white;
   outline-offset: 4px;
@@ -200,16 +206,14 @@ html {
 }
 
 .markdown-content code {
-  background: var(--foreground);
-  opacity: 0.1;
+  background: color-mix(in srgb, var(--foreground) 10%, transparent);
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
   font-size: 0.9em;
 }
 
 .markdown-content pre {
-  background: var(--foreground);
-  opacity: 0.05;
+  background: color-mix(in srgb, var(--foreground) 10%, transparent);
   padding: 1.5rem;
   border-radius: 8px;
   margin: 2rem 0;
@@ -219,7 +223,6 @@ html {
 .markdown-content pre code {
   background: transparent;
   padding: 0;
-  opacity: 1;
 }
 
 .markdown-content hr {

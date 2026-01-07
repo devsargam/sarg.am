@@ -94,7 +94,10 @@ export default async function BlogPost(props: PageProps) {
     <main className="mx-auto py-8 max-w-3xl">
       <BlogNavigation />
       <header className="mb-12">
-        <h1 className="font-bold text-3xl md:text-4xl tracking-tight mb-3 text-[var(--foreground)]">
+        <h1 
+          className="font-bold text-3xl md:text-4xl tracking-tight mb-3 text-[var(--foreground)]"
+          style={{ viewTransitionName: `post-${params.slug}` }}
+        >
           {title}
         </h1>
         <p className="text-[var(--foreground)]/50 text-sm">{date}</p>
