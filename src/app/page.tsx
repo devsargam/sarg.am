@@ -5,7 +5,7 @@ import Introduction from '@/components/introduction';
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-y-12">
+    <div className="flex flex-col gap-y-8">
       {/* Introduction - Compact */}
       <Introduction />
 

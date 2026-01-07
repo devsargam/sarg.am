@@ -24,6 +24,12 @@ const blogSchema = z.object({
   description: z.string().optional(),
 });
 
+function calculateReadingTime(content: string): number {
+  const wordsPerMinute = 200;
+  const words = content.trim().split(/\s+/).length;
+  return Math.max(1, Math.ceil(words / wordsPerMinute));
+}
+
 async function getPost(slug: string) {
   try {
     const filePath = path.join(process.cwd(), 'src/content', `${slug}.md`);
@@ -37,7 +43,11 @@ async function getPost(slug: string) {
       throw new Error('Invalid data');
     }
 
-    return { ...validatedData, content };
+    return { 
+      ...validatedData, 
+      content,
+      readingTime: calculateReadingTime(content),
+    };
   } catch (error) {
     console.error(error);
     return null;
@@ -61,6 +71,8 @@ export async function generateStaticParams() {
   }
 }
 
+const siteUrl = 'https://sarg.am';
+
 export async function generateMetadata(props: PageProps) {
   const params = await props.params;
   const post = await getPost(params.slug);
@@ -69,15 +81,30 @@ export async function generateMetadata(props: PageProps) {
     return notFound();
   }
 
+  const description = post.description || `${post.title} - by Sargam Poudel`;
+
   return {
+    title: `${post.title} | Sargam Poudel`,
+    description,
+    alternates: {
+      canonical: `${siteUrl}/${params.slug}`,
+    },
     openGraph: {
-      title: params.slug,
-      description: post.title,
+      title: post.title,
+      description,
+      type: 'article',
+      publishedTime: post.date,
+      url: `${siteUrl}/${params.slug}`,
       images: [
         {
           url: `/og-image/${params.slug}`,
         },
       ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description,
     },
   };
 }
@@ -92,6 +119,7 @@ export default async function BlogPost(props: PageProps) {
 
   const title = post.title;
   const date = beautifyDate(post.date);
+  const readingTime = post.readingTime;
 
   const allPosts = getAllBlogPosts();
   const currentIndex = allPosts.findIndex((p) => p.slug === params.slug);
@@ -108,7 +136,9 @@ export default async function BlogPost(props: PageProps) {
         >
           {title}
         </h1>
-        <p className="text-[var(--foreground)]/50 text-sm">{date}</p>
+        <p className="text-[var(--foreground)]/50 text-sm">
+          {date} · {readingTime} min read
+        </p>
       </header>
       <Suspense fallback={<div>Loading...</div>}>
         <MarkdownRenderer content={post.content} />

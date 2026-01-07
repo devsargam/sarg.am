@@ -10,10 +10,10 @@ function AboutSection() {
   const hasMoreLinks = allLinks.length > 4;
 
   return (
-    <div className="flex flex-col gap-y-8 text-[var(--foreground)]">
+    <div className="flex flex-col gap-y-6 text-[var(--foreground)]">
       {/* Work Experience */}
       <div>
-        <h2 className="text-xs font-medium text-[var(--foreground)]/50 uppercase tracking-wider mb-4">
+        <h2 className="text-xs font-medium text-[var(--foreground)]/50 uppercase tracking-wider mb-3">
           Experience
         </h2>
         <div className="space-y-3">
@@ -33,7 +33,7 @@ function AboutSection() {
 
       {/* Open Source */}
       <div>
-        <h2 className="text-xs font-medium text-[var(--foreground)]/50 uppercase tracking-wider mb-4">
+        <h2 className="text-xs font-medium text-[var(--foreground)]/50 uppercase tracking-wider mb-3">
           Open Source
         </h2>
         <div className="flex flex-wrap gap-x-2 gap-y-1">

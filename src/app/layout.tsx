@@ -8,9 +8,39 @@ import { ViewTransitions } from 'next-view-transitions';
 
 const inter = Inter({ subsets: ['latin'] });
 
+const siteUrl = 'https://sarg.am';
+
 export const metadata: Metadata = {
-  title: 'Sargam Poudel',
-  description: 'A student and backend developer based on Bangalore, India',
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: 'Sargam Poudel',
+    template: '%s | Sargam Poudel',
+  },
+  description: 'I build things - software engineer based in Bangalore, India',
+  alternates: {
+    canonical: siteUrl,
+    types: {
+      'application/rss+xml': `${siteUrl}/feed.xml`,
+    },
+  },
+  openGraph: {
+    title: 'Sargam Poudel',
+    description: 'I build things - software engineer based in Bangalore, India',
+    url: siteUrl,
+    siteName: 'Sargam Poudel',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sargam Poudel',
+    description: 'I build things - software engineer based in Bangalore, India',
+    creator: '@sargampoudel',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({
@@ -21,6 +51,9 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en" className="bg-[var(--background)] text-[var(--foreground)]">
+        <head>
+          <link rel="alternate" type="application/rss+xml" title="Sargam Poudel's Blog" href="/feed.xml" />
+        </head>
         <body className={inter.className}>
           <a href="#main-content" className="skip-to-content">
             Skip to content

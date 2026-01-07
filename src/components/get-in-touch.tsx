@@ -1,54 +1,30 @@
 import React from 'react';
-import { GithubIcon, Mail, Linkedin, Twitter } from 'lucide-react';
 import Link from 'next/link';
 
-interface SocialLink {
-  icon: React.ReactNode;
-  href: string;
-  label: string;
-}
-
-const socialLinks: SocialLink[] = [
-  {
-    icon: <GithubIcon className="w-4 h-4" />,
-    href: 'https://github.com/devsargam',
-    label: 'GitHub',
-  },
-  {
-    icon: <Mail className="w-4 h-4" />,
-    href: 'mailto:sargampoudel100@gmail.com',
-    label: 'Email',
-  },
-  {
-    icon: <Linkedin className="w-4 h-4" />,
-    href: 'https://www.linkedin.com/in/devsargam',
-    label: 'LinkedIn',
-  },
-  {
-    icon: <Twitter className="w-4 h-4" />,
-    href: 'https://twitter.com/sargampoudel',
-    label: 'Twitter',
-  },
+const links = [
+  { label: 'GitHub', href: 'https://github.com/devsargam' },
+  { label: 'Twitter', href: 'https://twitter.com/sargampoudel' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/devsargam' },
+  { label: 'Email', href: 'mailto:hi@sarg.am' },
+  { label: 'RSS', href: '/feed.xml' },
 ];
 
 function GetInTouch() {
   return (
-    <footer className="pt-6 md:pt-8 border-t border-[var(--foreground)]/5">
-      <div className="flex justify-center gap-5">
-        {socialLinks.map((link, index) => (
+    <footer>
+      <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 text-sm">
+        {links.map((link, index) => (
           <Link
             key={index}
             href={link.href}
+            target={link.href.startsWith('http') ? '_blank' : undefined}
+            rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
             className="text-[var(--foreground)]/40 hover:text-[var(--foreground)] transition-colors"
-            aria-label={link.label}
           >
-            {link.icon}
+            {link.label}
           </Link>
         ))}
       </div>
-      <p className="mt-4 md:mt-6 text-center text-xs text-[var(--foreground)]/30">
-        © {new Date().getFullYear()} Sargam Poudel
-      </p>
     </footer>
   );
 }

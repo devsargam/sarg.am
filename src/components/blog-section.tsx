@@ -7,7 +7,7 @@ const blogPosts = getAllBlogPosts();
 function BlogSection() {
   return (
     <section className="flex flex-col text-[var(--foreground)]">
-      <h2 className="text-xs font-medium text-[var(--foreground)]/50 uppercase tracking-wider mb-4">
+      <h2 className="text-xs font-medium text-[var(--foreground)]/50 uppercase tracking-wider mb-3">
         Writing
       </h2>
 
