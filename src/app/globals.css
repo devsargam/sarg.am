@@ -1,35 +1,37 @@
 @import 'tailwindcss';
 
 :root {
-  --background: #FFFCF0;
-  --foreground: #100F0F;
+    --background: #fffcf0;
+    --foreground: #100f0f;
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #100F0F;
-    --foreground: #CECDC3;
-  }
+    :root {
+        --background: #100f0f;
+        --foreground: #cecdc3;
+    }
 }
 
 @theme {
-  --animate-*: initial;
-  --animate-shimmer: shimmer 2s linear infinite;
+    --animate-*: initial;
+    --animate-shimmer: shimmer 2s linear infinite;
 
-  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
-  --background-image-gradient-conic: conic-gradient(
-    from 180deg at 50% 50%,
-    var(--tw-gradient-stops)
-  );
+    --background-image-gradient-radial: radial-gradient(
+        var(--tw-gradient-stops)
+    );
+    --background-image-gradient-conic: conic-gradient(
+        from 180deg at 50% 50%,
+        var(--tw-gradient-stops)
+    );
 
-  @keyframes shimmer {
-    from {
-      background-position: 0 0;
+    @keyframes shimmer {
+        from {
+            background-position: 0 0;
+        }
+        to {
+            background-position: -200% 0;
+        }
     }
-    to {
-      background-position: -200% 0;
-    }
-  }
 }
 
 /*
@@ -41,198 +43,181 @@
   color utility to any element that depends on these defaults.
 */
 @layer base {
-  *,
-  ::after,
-  ::before,
-  ::backdrop,
-  ::file-selector-button {
-    border-color: var(--color-gray-200, currentcolor);
-  }
-}
-
-/* Copied from https://codepen.io/jakejarvis/pen/pBZWZw */
-.wave {
-  animation-name: wave-animation;
-  animation-duration: 3s;
-  animation-iteration-count: infinite;
-  transform-origin: 70% 70%;
-  display: inline-block;
-}
-
-@keyframes wave-animation {
-  0% {
-    transform: rotate(0deg);
-  }
-  10% {
-    transform: rotate(20deg);
-  }
-  20% {
-    transform: rotate(-8deg);
-  }
-  30% {
-    transform: rotate(20deg);
-  }
-  40% {
-    transform: rotate(-4deg);
-  }
-  50% {
-    transform: rotate(14deg);
-  }
-  60% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentcolor);
+    }
 }
 
 html {
-  scroll-behavior: smooth;
+    scroll-behavior: smooth;
 }
 
 /* View Transitions - subtle crossfade */
 ::view-transition-old(root),
 ::view-transition-new(root) {
-  animation-duration: 100ms;
+    animation-duration: 150ms;
+}
+
+/* Blog title transitions - position morph with crossfade, no size scaling */
+::view-transition-group(*) {
+    animation-duration: 300ms;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+::view-transition-old(*),
+::view-transition-new(*) {
+    animation-duration: 300ms;
+    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    /* Prevent size scaling - keep original dimensions */
+    width: 50%;
+    height: 50%;
+    object-fit: none;
+    object-position: left top;
 }
 
 .highlight {
-  outline: 2px dotted white;
-  outline-offset: 4px;
-  border-radius: 4px;
-  transition: outline 0.3s ease-in-out, outline-offset 0.3s ease-in-out;
+    outline: 2px dotted white;
+    outline-offset: 4px;
+    border-radius: 4px;
+    transition:
+        outline 0.3s ease-in-out,
+        outline-offset 0.3s ease-in-out;
 }
 
 /* Focus states for accessibility */
 *:focus-visible {
-  outline: 2px solid var(--foreground);
-  outline-offset: 2px;
-  border-radius: 4px;
+    outline: 2px solid var(--foreground);
+    outline-offset: 2px;
+    border-radius: 4px;
 }
 
 /* Skip to content link */
 .skip-to-content {
-  position: absolute;
-  left: -9999px;
-  z-index: 999;
-  padding: 0.5rem 1rem;
-  background: var(--foreground);
-  color: var(--background);
-  text-decoration: none;
-  border-radius: 4px;
+    position: absolute;
+    left: -9999px;
+    z-index: 999;
+    padding: 0.5rem 1rem;
+    background: var(--foreground);
+    color: var(--background);
+    text-decoration: none;
+    border-radius: 4px;
 }
 
 .skip-to-content:focus {
-  left: 1rem;
-  top: 1rem;
+    left: 1rem;
+    top: 1rem;
 }
 
 /* Markdown content styling */
 .markdown-content {
-  color: var(--foreground);
-  font-size: 1.125rem;
-  line-height: 1.8;
+    color: var(--foreground);
+    font-size: 1.125rem;
+    line-height: 1.8;
 }
 
 .markdown-content p {
-  margin-bottom: 1.75rem;
-  opacity: 0.9;
+    margin-bottom: 1.75rem;
+    opacity: 0.9;
 }
 
 .markdown-content h1 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-top: 3rem;
-  margin-bottom: 1.5rem;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
 }
 
 .markdown-content h2 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-top: 2.5rem;
-  margin-bottom: 1rem;
-  line-height: 1.3;
-  letter-spacing: -0.02em;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    letter-spacing: -0.02em;
 }
 
 .markdown-content h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
-  line-height: 1.4;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
 }
 
 .markdown-content a {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  text-decoration-color: var(--foreground);
-  opacity: 0.5;
-  transition: opacity 0.15s ease;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: var(--foreground);
+    opacity: 0.5;
+    transition: opacity 0.15s ease;
 }
 
 .markdown-content a:hover {
-  opacity: 1;
+    opacity: 1;
 }
 
 .markdown-content strong {
-  font-weight: 600;
+    font-weight: 600;
 }
 
 .markdown-content em {
-  font-style: italic;
+    font-style: italic;
 }
 
 .markdown-content ul,
 .markdown-content ol {
-  margin-bottom: 1.75rem;
-  padding-left: 1.5rem;
+    margin-bottom: 1.75rem;
+    padding-left: 1.5rem;
 }
 
 .markdown-content li {
-  margin-bottom: 0.5rem;
-  opacity: 0.9;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
 }
 
 .markdown-content blockquote {
-  border-left: 3px solid var(--foreground);
-  opacity: 0.3;
-  padding-left: 1.5rem;
-  margin: 2rem 0;
-  font-style: italic;
-  opacity: 0.8;
+    border-left: 3px solid var(--foreground);
+    opacity: 0.3;
+    padding-left: 1.5rem;
+    margin: 2rem 0;
+    font-style: italic;
+    opacity: 0.8;
 }
 
 .markdown-content code {
-  background: color-mix(in srgb, var(--foreground) 10%, transparent);
-  padding: 0.2rem 0.4rem;
-  border-radius: 4px;
-  font-size: 0.9em;
+    background: color-mix(in srgb, var(--foreground) 10%, transparent);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
 }
 
 .markdown-content pre {
-  background: color-mix(in srgb, var(--foreground) 10%, transparent);
-  padding: 1.5rem;
-  border-radius: 8px;
-  margin: 2rem 0;
-  overflow-x: auto;
+    background: color-mix(in srgb, var(--foreground) 10%, transparent);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin: 2rem 0;
+    overflow-x: auto;
 }
 
 .markdown-content pre code {
-  background: transparent;
-  padding: 0;
+    background: transparent;
+    padding: 0;
 }
 
 .markdown-content hr {
-  border: none;
-  border-top: 1px solid var(--foreground);
-  opacity: 0.1;
-  margin: 3rem 0;
+    border: none;
+    border-top: 1px solid var(--foreground);
+    opacity: 0.1;
+    margin: 3rem 0;
 }
 
 .markdown-content img {
-  border-radius: 8px;
-  margin: 2rem 0;
+    border-radius: 8px;
+    margin: 2rem 0;
 }
