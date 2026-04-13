@@ -2,7 +2,8 @@
 
 import Image from 'next/image';
 import React, { useState } from 'react';
-import { Copy, Check } from 'lucide-react';
+import { Copy, Check, Wrench } from 'lucide-react';
+import { Link } from 'next-view-transitions';
 
 function Introduction() {
   const [copied, setCopied] = useState(false);
@@ -15,7 +16,8 @@ function Introduction() {
   };
 
   return (
-    <div className="flex gap-3 items-center">
+    <div className="flex gap-3 items-center justify-between">
+      <div className="flex gap-3 items-center">
       <Image
         src="https://avatars.githubusercontent.com/u/76874341?v=4"
         alt="Sargam's Photo"
@@ -49,6 +51,14 @@ function Introduction() {
           </button>
         </p>
       </div>
+      </div>
+      <Link
+        href="/tools"
+        className="p-2 rounded-lg text-[var(--foreground)]/40 hover:text-[var(--foreground)] hover:bg-[var(--foreground)]/5 transition-all"
+        title="Tools"
+      >
+        <Wrench className="w-4 h-4" />
+      </Link>
     </div>
   );
 }
