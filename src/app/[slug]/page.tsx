@@ -131,13 +131,19 @@ export default async function BlogPost(props: PageProps) {
       <BlogNavigation />
       <header className="mb-8 md:mb-12">
         <h1 
-          className="font-bold text-3xl md:text-4xl tracking-tight mb-3 text-[var(--foreground)]"
+          className="vt-morph w-fit font-bold text-3xl md:text-4xl tracking-tight mb-3 text-[var(--foreground)]"
           style={{ viewTransitionName: `post-${params.slug}` }}
         >
           {title}
         </h1>
         <p className="text-[var(--foreground)]/50 text-sm">
-          {date} · {readingTime} min read
+          <span
+            className="vt-morph inline-block"
+            style={{ viewTransitionName: `post-date-${params.slug}` }}
+          >
+            {date}
+          </span>{' '}
+          <span className="vt-post-meta inline-block">· {readingTime} min read</span>
         </p>
       </header>
       <Suspense fallback={<div>Loading...</div>}>
@@ -149,9 +155,9 @@ export default async function BlogPost(props: PageProps) {
         {prevPost ? (
           <Link
             href={`/${prevPost.slug}`}
-            className="flex items-center gap-2 text-sm text-[var(--foreground)]/60 hover:text-[var(--foreground)] transition-colors"
+            className="min-w-0 flex items-center gap-2 text-sm text-[var(--foreground)]/60 hover:text-[var(--foreground)] transition-colors"
           >
-            <ArrowLeft className="w-4 h-4" />
+            <ArrowLeft className="w-4 h-4 shrink-0" />
             <span className="truncate">{prevPost.title}</span>
           </Link>
         ) : (
@@ -160,10 +166,10 @@ export default async function BlogPost(props: PageProps) {
         {nextPost ? (
           <Link
             href={`/${nextPost.slug}`}
-            className="flex items-center gap-2 text-sm text-[var(--foreground)]/60 hover:text-[var(--foreground)] transition-colors text-right"
+            className="min-w-0 flex items-center gap-2 text-sm text-[var(--foreground)]/60 hover:text-[var(--foreground)] transition-colors text-right"
           >
             <span className="truncate">{nextPost.title}</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-4 h-4 shrink-0" />
           </Link>
         ) : (
           <div />

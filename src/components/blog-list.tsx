@@ -12,12 +12,15 @@ function BlogCard({ post }: { post: BlogPost }) {
       className="group py-3 flex justify-between items-baseline gap-4 border-b border-[var(--foreground)]/5 last:border-0 transition-colors"
     >
       <span 
-        className="font-medium group-hover:text-[var(--foreground)]/70 transition-colors"
+        className="vt-morph font-medium group-hover:text-[var(--foreground)]/70 transition-colors"
         style={{ viewTransitionName: `post-${post.slug}` }}
       >
         {post.title}
       </span>
-      <span className="text-xs text-[var(--foreground)]/40 shrink-0">
+      <span
+        className="vt-morph text-xs text-[var(--foreground)]/40 shrink-0"
+        style={{ viewTransitionName: `post-date-${post.slug}` }}
+      >
         {beautifyDate(post.date)}
       </span>
     </Link>

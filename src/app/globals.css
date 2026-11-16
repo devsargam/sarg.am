@@ -56,27 +56,107 @@ html {
     scroll-behavior: smooth;
 }
 
-/* View Transitions - subtle crossfade */
-::view-transition-old(root),
-::view-transition-new(root) {
-    animation-duration: 150ms;
+/* View Transitions
+   The page swaps with a quick staggered fade (old leaves before new arrives, so
+   two pages of text never sit on top of each other), while a post title travels
+   and grows between the list and the post, bridging the gap. */
+::view-transition {
+    background: var(--background);
 }
 
-/* Blog title transitions - position morph with crossfade, no size scaling */
 ::view-transition-group(*) {
-    animation-duration: 300ms;
-    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+    animation-duration: 400ms;
+    animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
 }
 
-::view-transition-old(*),
-::view-transition-new(*) {
-    animation-duration: 300ms;
-    animation-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
-    /* Prevent size scaling - keep original dimensions */
-    width: 50%;
-    height: 50%;
-    object-fit: none;
-    object-position: left top;
+@keyframes vt-fade-out {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes vt-fade-in {
+    from {
+        opacity: 0;
+    }
+}
+
+@keyframes vt-rise-in {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+}
+
+@keyframes vt-meta-in {
+    from {
+        opacity: 0;
+        transform: translateX(-6px);
+    }
+}
+
+/* The page, plus any title that has no partner on the other page */
+::view-transition-old(root),
+::view-transition-old(*):only-child {
+    animation: vt-fade-out 140ms ease-out both;
+}
+
+::view-transition-new(root),
+::view-transition-new(*):only-child {
+    animation: vt-fade-in 280ms cubic-bezier(0, 0, 0.2, 1) 120ms both;
+}
+
+/* Opening a post: the page also rises into place. Going back home is a plain
+   fade, so back never looks like another step forward. */
+:root:has(.vt-post-meta)::view-transition-new(root) {
+    animation-name: vt-rise-in;
+}
+
+/* Post titles and dates: both snapshots scale with the moving box (so the text grows
+   rather than jumping size) and stay vertically centred on each other. */
+.vt-morph {
+    view-transition-class: morph;
+}
+
+::view-transition-old(.morph):not(:only-child),
+::view-transition-new(.morph):not(:only-child) {
+    top: 50%;
+    translate: 0 -50%;
+    /* Swap weights early so the second half of the flight is one crisp title */
+    animation-duration: 220ms;
+    animation-timing-function: ease-in-out;
+}
+
+/* Reading time: slides out from behind the date as it lands, finishing with the morph */
+.vt-post-meta {
+    view-transition-name: post-meta;
+}
+
+::view-transition-old(post-meta):only-child {
+    animation: vt-fade-out 100ms ease-out both;
+}
+
+::view-transition-new(post-meta):only-child {
+    animation: vt-meta-in 220ms cubic-bezier(0.22, 1, 0.36, 1) 180ms both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    /* Same fades, no movement */
+    @keyframes vt-rise-in {
+        from {
+            opacity: 0;
+        }
+    }
+
+    @keyframes vt-meta-in {
+        from {
+            opacity: 0;
+        }
+    }
+
+    ::view-transition-group(*) {
+        animation-duration: 0s;
+    }
 }
 
 .highlight {

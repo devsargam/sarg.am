@@ -1,12 +1,19 @@
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import localFont from 'next/font/local';
 import './globals.css';
 import Script from 'next/script';
 import { ViewTransitions } from 'next-view-transitions';
 
-const inter = Inter({ subsets: ['latin'] });
+// Allo by Josh Puckett (SIL OFL, see ./fonts/Allo-OFL.txt)
+const allo = localFont({
+  src: [
+    { path: './fonts/AlloVariableFriendly.woff2', weight: '100 900', style: 'normal' },
+    { path: './fonts/Allo-Oblique.woff2', weight: '400', style: 'italic' },
+  ],
+  display: 'swap',
+});
 
 const siteUrl = 'https://sarg.am';
 
@@ -50,11 +57,11 @@ export default function RootLayout({
 }>) {
   return (
     <ViewTransitions>
-      <html lang="en" className="bg-[var(--background)] text-[var(--foreground)]">
+      <html lang="en" data-scroll-behavior="smooth" className="bg-[var(--background)] text-[var(--foreground)]">
         <head>
           <link rel="alternate" type="application/rss+xml" title="Sargam Poudel's Blog" href="/feed.xml" />
         </head>
-        <body className={inter.className}>
+        <body className={allo.className}>
           <a href="#main-content" className="skip-to-content">
             Skip to content
           </a>

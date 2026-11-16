@@ -4,7 +4,6 @@ import Image from 'next/image';
 import React, { useState } from 'react';
 import { Copy, Check, Wrench } from 'lucide-react';
 import { Link } from 'next-view-transitions';
-import Name from './name';
 
 function Introduction() {
   const [copied, setCopied] = useState(false);
@@ -28,7 +27,7 @@ function Introduction() {
         />
         <div>
           <h1 className="font-semibold text-base text-[var(--foreground)]">
-            <Name />
+            Sargam Poudel
           </h1>
           <p className="text-[var(--foreground)]/50 text-sm flex items-center gap-1">
             I build things ·{' '}
